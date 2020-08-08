@@ -15,4 +15,4 @@
 * System.Linq 4.3 
 
 ## Authors
-Takushi Tokuyama
+* Takushi Tokuyama
