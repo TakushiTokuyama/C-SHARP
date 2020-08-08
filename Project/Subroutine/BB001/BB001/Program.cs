@@ -8,7 +8,7 @@ namespace BB001
         {
             BB001Service service = new BB001Service();
 
-            var list = service.GetWinRate();
+            var list = service.LeaderBoardAndPlayers();
 
             list.ForEach(l =>
             {            

@@ -7,10 +7,10 @@ namespace BB001
     /// <summary>
     /// B001Service
     /// </summary>
-    public class BB001Service
+    public class BB001Service : IBB001Service
     {
         /// <inheritdoc />
-        public List<LeaderBoardAndPlayersDto> GetWinRate()
+        public List<LeaderBoardAndPlayersDto> LeaderBoardAndPlayers()
         {
             OracleDbConnection oracleDbConnection = new OracleDbConnection();
 

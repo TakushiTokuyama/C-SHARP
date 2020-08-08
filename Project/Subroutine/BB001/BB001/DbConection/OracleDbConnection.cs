@@ -38,7 +38,7 @@ namespace BB001
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message + "LEADERBOARD");
             }
 
             return list;
@@ -72,7 +72,7 @@ namespace BB001
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.Message + "BBPLAYERS");
             }
 
             return list;
