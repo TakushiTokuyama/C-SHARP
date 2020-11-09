@@ -1,3 +1,4 @@
 ﻿
 # 接続情報
-BB001/OracleDbConnectionInfo.cs
+OracleDbConnectionInfo.cs
+ConstConnection.cs

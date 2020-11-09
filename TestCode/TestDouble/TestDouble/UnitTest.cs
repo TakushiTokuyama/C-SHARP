@@ -72,5 +72,25 @@ namespace TestDouble
             Assert.Equal("こんにちは", mock.Object.Greet("あいさつ"));
             Assert.Equal("こんばんは", mock.Object.Greet("あいさつ"));
         }
+
+        [Fact]
+        public void Test5()
+        {
+            var mock = new Mock<IGreet>();
+
+            // 例外時
+            mock.Setup(x => x.Greet("あいさつ以外"))
+                .Throws<Exception>();
+
+            Assert.Throws<Exception>(() => mock.Object.Greet("あいさつ以外"));
+        }
+
+        [Fact]
+        public void Test6()
+        {
+            var mock = new Mock<IGreet>();
+
+            Assert.Equal("こんばんは", mock.Object.Greet("あいさつ"));
+        }
     }
 }

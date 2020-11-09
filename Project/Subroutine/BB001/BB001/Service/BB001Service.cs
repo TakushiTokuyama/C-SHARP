@@ -39,8 +39,15 @@ namespace BB001
                     WinRate = l.Win / (double)(l.Win + l.Lose),
                     Name = p.Name,
                     LeaderNum = l.LeaderNum
-                   
+
                 }).OrderByDescending(l => l.WinRate);
+
+            LBBPlayers = null;
+
+            if (LBBPlayers == null)
+            {
+                return new List<LeaderBoardAndPlayersDto>();
+            }
 
             return LBBPlayers.ToList();
         }
