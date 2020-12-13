@@ -1,0 +1,28 @@
+﻿@model SampleViewModel
+@{
+    ViewData["Title"] = "Sample1";
+}
+
+<h1>Sample1</h1>
+
+<form asp-action="SampleFind">
+    <div class="row">
+        <div class="col-sm-2">
+            <label for="id" class="text-danger">DropDownList</label>
+        </div>
+        <div class="col-sm-4">
+            <select class="form-control" asp-for="list" asp-items="@Model.DropDownList"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+            <input type="submit" value="送信">
+        </div>
+    </div>
+</form>
+
+
+<div class="row">
+    @Html.DisplayFor(m => m.Result)
+</div>
+

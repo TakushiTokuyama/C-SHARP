@@ -1,0 +1,48 @@
+﻿@model WebApplication3.Models.UniqueViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="row">
+    <table class="table-bordered">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(m => m.staff.Joiny)</th>
+                <th>@Html.DisplayNameFor(m => m.staff.Id)</th>
+                <th>@Html.DisplayNameFor(m => m.staff.Name)</th>
+            </tr>
+        </thead>
+        @foreach (var item in Model.staffList)
+        {
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayFor(itemModel => item.Joiny)</td>
+                    <td>@Html.DisplayFor(itemModel => item.Id)</td>
+                    <td>@Html.DisplayFor(itemModel => item.Name)</td>
+                </tr>
+            </tbody>
+        }
+    </table>
+</div>
+<div class="row">
+    <form asp-action="UniqueKeyUpdatePost">
+        <div class="col-sm-2">
+            <label for="seq_id">@Html.DisplayNameFor(m => m.staff.Seq_id)</label>
+            <input type="text" asp-for="@Model.staff.Seq_id" />
+        </div>
+        <div class="col-sm-2">
+            <label for="joiny">@Html.DisplayNameFor(m => m.staff.Joiny)</label>
+            <input type="text" asp-for="@Model.staff.Joiny" />
+        </div>
+        <div class="col-sm-2">
+            <label for="id">@Html.DisplayNameFor(m => m.staff.Id)</label>
+            <input type="text" asp-for="@Model.staff.Id" />
+        </div>
+        <div class="col-sm-2">
+            <label for="name">@Html.DisplayNameFor(m => m.staff.Name)</label>
+            <input type="text" asp-for="@Model.staff.Name" />
+        </div>
+        <input type="submit" value="更新" />
+    </form>
+</div>

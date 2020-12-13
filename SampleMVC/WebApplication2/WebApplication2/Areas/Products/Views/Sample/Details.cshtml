@@ -1,0 +1,40 @@
+﻿@model WebApplication2.Areas.Products.SampleViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Person</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Person.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Person.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Person.Mail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Person.Mail)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(m => m.Person.Age)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(m => m.Person.Age)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PersonId">Edit</a>
+    <a asp-action="Index">Back to List</a>
+</div>
+
