@@ -1,0 +1,86 @@
+﻿@model SampleViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+    <form asp-action="Update" name="update">
+        <!--在庫一覧-->
+        <div class="row">
+            <div class="col-sm-4">
+                @Html.DisplayNameFor(m => m.ZaikoList.First().ProductName)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayNameFor(m => m.ZaikoList.First().ZaikoStock)
+            </div>
+        </div>
+        
+        <div class="row">
+            @foreach (var item in Model.ZaikoList)
+            {
+                <div class="col-sm-4">
+                    @Html.DisplayFor(ModelItem => item.ProductName)
+                </div>
+                <div class="col-sm-2">
+                    @Html.DisplayFor(ModelItem => item.ZaikoStock)
+                </div>
+                <div class="col-sm-6"></div>
+            }
+        </div>
+        <!--入力フォーム-->
+        <div class="row mt-5">
+            <div class="col-sm-3">
+                <label for="zaikoCode">@Html.DisplayNameFor(m => m.ZaikoList.First().ZaikoCode)</label>
+                <input id="zaikoCode" type="text" asp-for="@Model.Zaiko.ZaikoCode" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <label for="productName">@Html.DisplayNameFor(m => m.ZaikoList.First().ProductName)</label>
+                <input id="productName" type="text" asp-for="@Model.Zaiko.ProductName" class="form-control" />
+            </div>
+            <div class="col-sm-3">
+                <label for="zaikoStock">@Html.DisplayNameFor(m => m.ZaikoList.First().ZaikoStock)</label>
+                <input id="zaikoStok" type="text" asp-for="@Model.Zaiko.ZaikoStock" class="form-control" />
+            </div>
+        </div>
+    </form>
+
+    <!--ボタン-->
+    <div class="row mt-5">
+        <div class="col-sm-2">
+            <button type="button" onclick="edit();">一件更新</button>
+        </div>
+
+        <div class="col-sm-2">
+            <button type="button" onclick="alledit();">全件-1更新</button>
+        </div>
+
+        <div class="col-sm-2">
+            <button type="button" onclick="zaikoedit();">在庫の名前で更新</button>
+        </div>
+    </div>
+
+    <form asp-action="Kbn" name="kbn">
+        <div class="row mt-5">
+            <div class="col-sm-4">
+                <select class="form-control" asp-for="editList" asp-items="@Model.EditDropDownList"></select>
+            </div>
+            <div class="col-sm-4">
+                <input type="text" asp-for="@Model.zaikoNum" />
+            </div>
+        </div>
+    </form>
+    
+    
+    <form asp-action="AllUpdate" name="allUpdate"></form>
+    <form id="product" asp-action="ZaikoNameUpdate" name="zaikoUpdate"></form>
+
+    <!--ボタン-->
+<div class="row mt-5">
+    <div class="col-sm-4">
+        <label>フォーム入力数更新</label>
+        <button type="button" onclick="dropedit();">更新</button>
+    </div>
+</div>
+    
+<script src="~/js/Sample.js"></script>

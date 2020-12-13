@@ -1,0 +1,36 @@
+﻿@model WebApplication3.Models.AutoMapperSampleViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="row">
+    <div class="col-sm-6">
+        @foreach (var item in Model.Staff)
+        {
+            <div class="col-sm-2">
+                @Html.DisplayFor(itemModel => item.Id)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayFor(itemModel => item.Joiny)
+            </div>
+            <div class="col-sm-2">
+                @Html.DisplayFor(itemModel => item.Name)
+            </div>
+        }
+    </div>
+    <div class="col-sm-6">
+        <form asp-action="AutoMapperSamplePost">
+            <span class="col-sm-2">Seq_id</span>
+            <div class="col-sm-4"><input type="text" asp-for="@Model.Seq_id" /></div>
+            <span class="col-sm-2">Id</span>
+            <div class="col-sm-4"><input type="text" asp-for="@Model.Id" /></div>
+            <span class="col-sm-2">Joiny</span>
+            <div class="col-sm-4"><input type="text" asp-for="@Model.Joiny" /></div>
+            <span class="col-sm-2">Name</span>
+            <div class="col-sm-6"><input type="text" asp-for="@Model.Name" /></div>
+            <div class="col-sm-6"><input type="submit" value="更新" /></div>
+        </form>
+    </div>
+</div>

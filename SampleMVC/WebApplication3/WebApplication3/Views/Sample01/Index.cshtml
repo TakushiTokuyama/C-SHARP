@@ -1,0 +1,20 @@
+﻿@model WebApplication3.Models.Sample01.Sample01ViewModel
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+}
+
+<form id="find" asp-controller="Sample01" asp-action="Find">
+    <input type="text" asp-for="@Model.num" />
+    <input type="submit" value="検索" />
+</form>
+
+<div id="result">
+    <label>結果表示</label>
+    <p>@Html.DisplayFor(m => m.num)</p>
+    <button onclick="clear()">クリア</button>
+</div>
+
+<script src="~/js/Sample01.js"></script>
