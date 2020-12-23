@@ -1,26 +1,29 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class ThreadSample
+    /// <summary>
+    /// Task
+    /// </summary>
+    public class TaskSample
     {
-        /// <summary>
-        /// Thread
-        /// </summary>
         public void Excute()
         {
-            Thread thread = new Thread(new ThreadStart(() =>
+            Task task = Task.Run(() =>
             {
                 CountUp1();
-            }));
+            });
 
-            thread.Start();
+            task.Wait();
 
             CountUp2();
         }
 
-        public void CountUp1() 
+        public void CountUp1()
         {
             for (int i = 0; i < 5; i++)
             {
@@ -29,7 +32,7 @@ namespace ConsoleApp1
             }
         }
 
-        public void CountUp2() 
+        public void CountUp2()
         {
             for (int i = 0; i < 5; i++)
             {

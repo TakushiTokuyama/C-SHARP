@@ -1,44 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    /// <summary>
-    /// Task
-    /// </summary>
-    public class TaskSample
+    public class ThreadSample
     {
+        /// <summary>
+        /// Thread
+        /// </summary>
         public void Excute()
         {
-            Task task = Task.Run(() =>
+            Thread thread = new Thread(new ThreadStart(() =>
             {
                 CountUp1();
-            });
+            }));
 
-            task.Wait();
+            thread.Start();
 
             CountUp2();
         }
 
-        public void CountUp1()
+        public void CountUp1() 
         {
             for (int i = 0; i < 5; i++)
             {
-                Console.WriteLine("countUp1が呼ばれました。");
                 Thread.Sleep(300);
                 Console.WriteLine("countUp1が呼ばれました。");
             }
         }
 
-        public void CountUp2()
+        public void CountUp2() 
         {
             for (int i = 0; i < 5; i++)
             {
                 Console.WriteLine("countUp2が呼ばれました。");
             }
+        }
+
+        public void Excute1() 
+        {
+            Console.WriteLine("Start");
         }
     }
 }
