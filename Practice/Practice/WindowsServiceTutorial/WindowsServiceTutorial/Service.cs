@@ -44,7 +44,7 @@ namespace WindowsServiceTutorial
 
         private int eventId = 1;
 
-        private EventLogWatcher eventLogWatvher = new EventLogWatcher("MyNewLog");
+        private EventLogWatcher eventLogWatcher = new EventLogWatcher("MyNewLog");
         public Service()
         {
             InitializeComponent();
@@ -57,6 +57,11 @@ namespace WindowsServiceTutorial
             eventLog.Source = "MySource";
             eventLog.Log = "MyNewLog";
 
+            eventLogWatcher.EventRecordWritten += new EventHandler<EventRecordWrittenEventArgs>(writeEvent);
+
+            // イベントログ監視開始
+            eventLogWatcher.Enabled = true;
+
             Timer timer = new Timer();
             timer.Interval = 60000;
             timer.Elapsed += new ElapsedEventHandler(this.OnTimer);
@@ -64,16 +69,27 @@ namespace WindowsServiceTutorial
 
         }
 
+        /// <summary>
+        /// タイマーイベント
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         public void OnTimer(object sender, ElapsedEventArgs args)
         {
             eventLog.WriteEntry("System", EventLogEntryType.Information, eventId++);
-
-            eventLogWatvher.EventRecordWritten += new EventHandler<EventRecordWrittenEventArgs>(writeEvent);
         }
 
+        /// <summary>
+        /// イベントログ発生時にログ出力
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="arg"></param>
         public void writeEvent(Object obj, EventRecordWrittenEventArgs arg)
         {
-            eventLog.WriteEntry("Eventが発生しました。", EventLogEntryType.Information);
+            if (arg.EventRecord.Id > 0)
+            {
+                eventLog.WriteEntry("Eventが発生しました。", EventLogEntryType.Information);
+            }
         }
 
         /// <summary>
