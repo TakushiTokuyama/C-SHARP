@@ -130,7 +130,7 @@ namespace WindowsServiceTutorial
 
         protected override void OnShutdown()
         {
-            eventLog.WriteEntry("OnShutdown");
+            eventLog.WriteEntry("On ShutDown", EventLogEntryType.Information);
             base.OnShutdown();
         }
 
