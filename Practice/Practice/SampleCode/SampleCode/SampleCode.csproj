@@ -44,9 +44,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConnectionList.cs" />
+    <Compile Include="ConverterBase.cs" />
     <Compile Include="DateStr.cs" />
     <Compile Include="EmployeeListNotFounddException.cs" />
     <Compile Include="ExceptionSample.cs" />
+    <Compile Include="ExchangeConverter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

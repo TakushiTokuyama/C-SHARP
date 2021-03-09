@@ -1,5 +1,5 @@
-﻿using System;
-using System.Linq;
+﻿using SampleCode;
+using System;
 
 namespace ConsoleApp3
 {
@@ -7,7 +7,10 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
+            
+            var result = new ExchangeConverter(new EuroConverter(), new DollerConverter()).Convert(100);
 
+            Console.WriteLine(result);
         }
     }
 }
