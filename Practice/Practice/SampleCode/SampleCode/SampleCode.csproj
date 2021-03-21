@@ -43,14 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppServiceProvider.cs" />
     <Compile Include="ConnectionList.cs" />
     <Compile Include="ConverterBase.cs" />
     <Compile Include="DateStr.cs" />
+    <Compile Include="DummyUserRepository.cs" />
     <Compile Include="EmployeeListNotFounddException.cs" />
     <Compile Include="ExceptionSample.cs" />
     <Compile Include="ExchangeConverter.cs" />
+    <Compile Include="IUserRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
