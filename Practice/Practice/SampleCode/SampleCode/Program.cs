@@ -7,10 +7,12 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
-            
-            var result = new ExchangeConverter(new EuroConverter(), new DollerConverter()).Convert(100);
 
-            Console.WriteLine(result);
+            // var result = new ExchangeConverter(new EuroConverter(), new DollerConverter()).Convert(100);
+
+            // Console.WriteLine(result);
+
+            new AppServiceProvider().Register();
         }
     }
 }
