@@ -52,8 +52,11 @@
     <Compile Include="ExceptionSample.cs" />
     <Compile Include="ExchangeConverter.cs" />
     <Compile Include="IUserRepository.cs" />
+    <Compile Include="Mail.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestMail.cs" />
+    <Compile Include="SendMailBase.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserRepository.cs" />

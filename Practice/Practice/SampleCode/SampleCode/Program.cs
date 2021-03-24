@@ -12,7 +12,9 @@ namespace ConsoleApp3
 
             // Console.WriteLine(result);
 
-            new AppServiceProvider().Register();
+            // new AppServiceProvider().Register();
+
+            new TestMail();
         }
     }
 }
