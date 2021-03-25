@@ -14,7 +14,11 @@ namespace ConsoleApp3
 
             // new AppServiceProvider().Register();
 
-            new TestMail();
+            new Country<Japan>();
+            new Country<USA>();
+
+
+            new TestMail(new User() { id = 1, Name = "A", Token = "222" });
         }
     }
 }

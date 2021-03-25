@@ -4,18 +4,33 @@ namespace SampleCode
 {
     public class TestMail : SendMailBase
     {
-        public TestMail() 
+        private User user;
+
+        public TestMail(User user)
         {
-            base.Execute();
+            this.user = user;
+            Execute();
         }
 
         protected override Mail CreateMail()
         {
             return new Mail()
             {
-                Body = "Hello",
-                Subject = "World"
+                Subject = $"{user.Token}",
+                Body = $"{user.Name }さん",
             };
+        }
+
+        protected override void Execute()
+        {
+            // 作成
+            var mail = CreateMail();
+
+            // 送信
+            SendMail(mail);
+
+            // 更新
+            UpdateMail(mail);
         }
 
         protected override void SendMail(Mail mail)
