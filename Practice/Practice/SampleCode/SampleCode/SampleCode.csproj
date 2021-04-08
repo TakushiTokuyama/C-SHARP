@@ -51,6 +51,7 @@
     <Compile Include="EmployeeListNotFounddException.cs" />
     <Compile Include="ExceptionSample.cs" />
     <Compile Include="ExchangeConverter.cs" />
+    <Compile Include="HashCode.cs" />
     <Compile Include="IUserRepository.cs" />
     <Compile Include="Japan.cs" />
     <Compile Include="Mail.cs" />

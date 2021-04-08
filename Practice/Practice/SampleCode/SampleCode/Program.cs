@@ -1,5 +1,6 @@
 ﻿using SampleCode;
 using System;
+using System.Text;
 
 namespace ConsoleApp3
 {
@@ -7,18 +8,24 @@ namespace ConsoleApp3
     {
         static void Main(string[] args)
         {
+            var password = new HashCode().HashConvert("1");
 
-            // var result = new ExchangeConverter(new EuroConverter(), new DollerConverter()).Convert(100);
+            var password2 = new HashCode().HashConvert(password);
 
-            // Console.WriteLine(result);
+            Console.WriteLine(password);
 
-            // new AppServiceProvider().Register();
+            if (password2 == "A0E65FEADC0BAE63AE088C3D8D648C3BBE145442E1D399618404042EE6785495DFA95844AB23CBE082A33467A96A50544DD42329CA55ADA7DF9E8CE7E0D1C740")
+            {
+                Console.WriteLine("ログイン成功");
+            }
+            else 
+            {
+                Console.WriteLine("ログイン失敗");
+            }
 
-            new Country<Japan>();
-            new Country<USA>();
+            int byteCount = Encoding.GetEncoding("UTF-8").GetByteCount(password);
 
-
-            new TestMail(new User() { id = 1, Name = "A", Token = "222" });
+            Console.WriteLine(byteCount);
         }
     }
 }
